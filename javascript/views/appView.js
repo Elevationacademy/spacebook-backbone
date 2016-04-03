@@ -2,8 +2,7 @@ var AppView = Backbone.View.extend({
   el: 'body',
 
   events: {
-    'click .add-post': 'addPost',
-    'click .remove': 'removePost'
+    'click .add-post': 'addPost'
   },
 
   // initialize get's called as soon as this componenet is constructed

@@ -9,7 +9,7 @@ var PostView = Backbone.View.extend({
   },
 
   removePost: function () {
-    // TODO: destroy the post model and remove the post view
+    // TODO: 'destroy' the post model and 'remove' the post view
   },
 
   render: function () {
