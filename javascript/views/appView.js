@@ -12,6 +12,7 @@ var AppView = Backbone.View.extend({
     // invoke render
     this.listenTo(this.model.get('posts'), 'add', this.renderPost);
 
+    // setting a variable to the posts div
     this.$posts = this.$('.posts');
   },
 
