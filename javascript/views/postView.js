@@ -10,7 +10,9 @@ var PostView = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model.get('comments'), 'add', this.renderComment, this);
+    // when a comment is added to this view's post model's 'comments' collection,
+    // invoke render comment
+    this.listenTo(this.model.get('comments'), 'add', this.renderComment);
   },
 
   toggleComments: function () {
@@ -29,7 +31,10 @@ var PostView = Backbone.View.extend({
   },
 
   renderComment: function (comment) {
+    // create a new from the newly added comment model
     var view = new CommentView({ model: comment });
+
+    // render and append the new commentView
     this.$el.find('.comments-list').append(view.render().el);
   },
 
