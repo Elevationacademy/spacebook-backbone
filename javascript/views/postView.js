@@ -22,8 +22,11 @@ var PostView = Backbone.View.extend({
   addComment: function () {
     // TODO: get the text of the comment and create a new CommentModel called comment
     // before the following
-
+    var text = this.$el.find('.comment-name').val();
+    comment = new CommentModel();
+    comment.set('text',text);
     this.model.get('comments').add(comment);
+
   },
 
   removePost: function () {
@@ -31,9 +34,9 @@ var PostView = Backbone.View.extend({
   },
 
   renderComment: function (comment) {
+    console.log(this.$el);
     // create a new from the newly added comment model
-    var view = new CommentView({ model: comment });
-
+    var view = new CommentView({ model: comment , collection:this.model.get('comments')});
     // render and append the new commentView
     this.$el.find('.comments-list').append(view.render().el);
   },
